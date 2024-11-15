@@ -24,7 +24,16 @@ return {
       })
 
       lspconfig.pylsp.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        settings = {
+           pylsp = {
+                 plugins = {
+                     pycodestyle = {
+                          ignore = {'E501', 'W504'},
+                          maxLineLength = 200                  },
+                           },
+                  },
+                  }
       })
 
       lspconfig.tailwindcss.setup({
